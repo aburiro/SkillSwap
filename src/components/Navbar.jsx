@@ -1,43 +1,56 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import '../css_style/Navbar.css';  // Assuming you'll create a CSS file for styles
+import 'bootstrap/dist/css/bootstrap.min.css';  // Bootstrap styles
+import '../css_style/Navbar.css';  // Assuming you will create a custom CSS file for overrides
 
 function Navbar() {
     return (
-        <nav className="navbar">
-            <div className="navbar-logo">
-                <Link to="/">SkillSwap</Link>
-            </div>
-            <ul className="navbar-links">
-                <li>
-                    <NavLink exact to="/" activeClassName="active-link">
-                        Home
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/explore" activeClassName="active-link">
-                        Explore Skills
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/post" activeClassName="active-link">
-                        Post a Skill
-                    </NavLink>
-                </li>
-                <li className="navbar-account">
-                    <NavLink to="/account" activeClassName="active-link">
-                        My Account
-                    </NavLink>
-                    {/* Dropdown for user account options */}
-                    <ul className="dropdown">
-                        <li><Link to="/account/profile">Profile</Link></li>
-                        <li><Link to="/account/skills">My Skills</Link></li>
-                        <li><Link to="/account/settings">Settings</Link></li>
-                        <li><Link to="/logout">Logout</Link></li>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="container-fluid">
+                <Link className="navbar-brand" to="/">SkillSwap</Link>
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <NavLink exact to="/" className="nav-link" activeClassName="active">
+                                Home
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to="/explore" className="nav-link" activeClassName="active">
+                                Explore Skills
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to="/post" className="nav-link" activeClassName="active">
+                                Post a Skill
+                            </NavLink>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <NavLink to="/account" className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                My Account
+                            </NavLink>
+                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><Link className="dropdown-item" to="/account/profile">Profile</Link></li>
+                                <li><Link className="dropdown-item" to="/account/skills">My Skills</Link></li>
+                                <li><Link className="dropdown-item" to="/account/settings">Settings</Link></li>
+                                <li><Link className="dropdown-item" to="/logout">Logout</Link></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </div>
         </nav>
     );
 }
