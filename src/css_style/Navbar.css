@@ -1,0 +1,62 @@
+/* Basic styling for the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.navbar-logo a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-links li {
+    position: relative;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.active-link {
+    border-bottom: 2px solid #f5a623;
+}
+
+.navbar-account .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: #444;
+    padding: 1rem;
+    list-style: none;
+}
+
+.navbar-account:hover .dropdown {
+    display: block;
+}
+
+.dropdown li {
+    margin-bottom: 0.5rem;
+}
+
+.dropdown a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.dropdown a:hover {
+    color: #f5a623;
+}
