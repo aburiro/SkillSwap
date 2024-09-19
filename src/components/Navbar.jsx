@@ -1,14 +1,23 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';  // Bootstrap styles
-import '../css_style/Navbar.css';  // Assuming you will create a custom CSS file for overrides
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css_style/Navbar.css';
 
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">SkillSwap</Link>
+                <button className="btn btn-link navbar-brand d-flex align-items-center">
+                    <img 
+                        src="src/assets/imges/skillswap_logo.PNG" 
+                        alt="SkillSwap Logo" 
+                        width="30" 
+                        height="30" 
+                        className="d-inline-block align-top me-2"
+                    />
+                    <Link className="navbar-brand mb-0" to="/">SkillSwap</Link>
+                </button>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -23,22 +32,22 @@ function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <NavLink exact to="/" className="nav-link" activeClassName="active">
+                            <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
                                 Home
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/explore" className="nav-link" activeClassName="active">
+                            <NavLink to="/explore" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
                                 Explore Skills
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/post" className="nav-link" activeClassName="active">
+                            <NavLink to="/post" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
                                 Post a Skill
                             </NavLink>
                         </li>
                         <li className="nav-item dropdown">
-                            <NavLink to="/account" className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <NavLink to="/account" className={({ isActive }) => isActive ? "nav-link dropdown-toggle active" : "nav-link dropdown-toggle"} id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 My Account
                             </NavLink>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
