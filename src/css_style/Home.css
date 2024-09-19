@@ -1,0 +1,105 @@
+/* Home.css */
+
+.home-container {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.jumbotron {
+    background-color: #f8f9fa;
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0.3rem;
+}
+
+.jumbotron h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.jumbotron .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+}
+
+.featured-skills h2, .how-it-works h2 {
+    color: #007bff;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    color: #007bff;
+}
+
+.how-it-works h3 {
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+
+.how-it-works p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .jumbotron h1 {
+        font-size: 2.5rem;
+    }
+
+    .jumbotron .lead {
+        font-size: 1rem;
+    }
+
+    .btn-lg {
+        font-size: 1rem;
+        padding: 0.375rem 0.75rem;
+    }
+}
+
+
+.button-spacing {
+    margin-right: 10px; /* Adjust this value to increase or decrease spacing */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* This creates space between the buttons */
+}
+/* For smaller screens, you might want to adjust the spacing */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .button-container .btn {
+        margin-bottom: 10bbpx;
+    }
+}
+ /* Add some vertical spacing for stacked buttons on small screens */
+
